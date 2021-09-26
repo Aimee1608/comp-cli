@@ -70,7 +70,7 @@ async function buildCJSOutputs() {
 async function buildPackages() {
 	setModuleEnv('esmodule')
 	const componentInfo = await getComponentInfo()
-	const outputName = omponentInfo.name
+	const outputName = componentInfo.name
 	await compilePackage({ isMinify: false, outputName });
 	await compilePackage({ isMinify: true, outputName });
 }

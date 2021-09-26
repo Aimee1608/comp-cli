@@ -1,7 +1,7 @@
 export default {
 	postcssOptions: {
 		autoprefixer: {},
-		plugins:[
+		plugins: [
 			[
 				require.resolve('postcss-px-to-viewport'),
 				{

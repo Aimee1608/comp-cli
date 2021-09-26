@@ -74,11 +74,12 @@ async function buildAction(config) {
 		const gitName = name
 		const url = `${GIT_BASE_URL}/${gitName}.git`;
 		let version = componentInfo.version
-		const git = simpleGit() // 进入git路径
-		await git.add('./*')
-			.commit(`Environment: [版本说明 ${version}]`)
-		let branch = await git.branch()
-		await git.push('origin', branch.current)
+		// TODO: 取消
+		// const git = simpleGit() // 进入git路径
+		// await git.add('./*')
+		// 	.commit(`Environment: [版本说明 ${version}]`)
+		// let branch = await git.branch()
+		// await git.push('origin', branch.current)
 		console.log(chalk.green(`项目构建完成，已推送到git仓库\n git 地址${url}`))
 	} catch (err) {
 		console.log('error', err);

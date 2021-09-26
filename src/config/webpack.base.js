@@ -14,10 +14,10 @@ const useESModules = BABEL_MODULE !== 'commonjs' && !isTest;
 const CSS_LOADERS = [
 	require.resolve('style-loader'),
 	require.resolve('css-loader'),
-	{
-		loader: require.resolve('postcss-loader'),
-		options: require(POSTCSS_CONFIG_FILE).default
-	},
+	// {
+	// 	loader: require.resolve('postcss-loader'),
+	// 	options: require(POSTCSS_CONFIG_FILE).default
+	// },
 ];
 
 const VUE_LOADER = {
@@ -78,7 +78,7 @@ export const baseConfig = {
 			{
 				test: /\.css$/,
 				sideEffects: true,
-				use: CSS_LOADERS,
+				use: CSS_LOADERS
 			},
 			{
 				test: /\.less$/,
@@ -95,6 +95,16 @@ export const baseConfig = {
 						limit: 25000,
 					},
 				},
+			},
+			{
+				test: /\.(eot|woff2?|ttf|svg)$/,
+				use: {
+					loader: require.resolve('url-loader'),
+					options: {
+						esModule: false,
+						limit: 25000,
+					}
+				}
 			}
 		]
 	},

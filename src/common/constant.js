@@ -24,12 +24,14 @@ export const POSTCSS_CONFIG_FILE = path.join(PROJECT_DIR, 'src/config', 'postcss
 
 export const PROJECT_TEMPLATE_PATH_CONFIG = {
 	'UI-vue2': path.join(PROJECT_DIR, 'template/vue2'),
-	'FUNC': path.join(PROJECT_DIR, 'template/utils')
+	'FUNC': path.join(PROJECT_DIR, 'template/utils'),
+	'RULE': path.join(PROJECT_DIR, 'template/rule')
 }
 
 export const TEMPLATE_TYPE_CONFIG = {
 	'UI-vue2': 'UI组件-vue2',
-	'FUNC': '通用函数组件'
+	'FUNC': '通用函数组件',
+	'RULE': '规则组件'
 }
 
 export const WEBPACK_CONFIG = {
@@ -42,5 +44,10 @@ export const WEBPACK_CONFIG = {
 		entry: './public/common/index.js',
 		HtmlTemplate: `${COMPONENT_DIR}/index.html`,
 		commonIndex: `import func from '${path.resolve(COMPONENT_DIR, 'src', 'index.js')}';window.func = func`
+	},
+	'RULE': {
+		entry: './rule/main.js',
+		HtmlTemplate: "./rule/index.html",
+		commonIndex: `import rule from '${path.resolve(COMPONENT_DIR, 'src', 'index.js')}';export default rule`
 	}
 }
