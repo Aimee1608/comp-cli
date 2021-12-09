@@ -17,7 +17,7 @@ const getConfig = (componentType, componentName) => {
 		module: {
 			rules: [
 				{
-					test: /webpack[\/ | \\]rule[\/ | \\]common[\/ | \\]index\.js$/,
+					test: /webpack[\/ | \\](rule|public)[\/ | \\]common[\/ | \\]index\.js$/,
 					exclude: [path.resolve(COMPONENT_DIR, 'node_modules')],
 					use: {
 						loader: StringReplacePlugin.replace({
